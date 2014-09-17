@@ -1,0 +1,22 @@
+application: kimsangbum890616
+version: 0-0-1-proto
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  static_files: \1
+  upload: (.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+- url: /static/css
+  static_dir: static/css
+
+- url: /static/js
+  static_dir: static/js
+
+- url: /(.*\.(php|html))
+  script: \1
+
+- url: /.*
+  script: apartree.html
